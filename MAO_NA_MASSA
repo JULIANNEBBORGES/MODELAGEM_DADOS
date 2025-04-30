@@ -1,0 +1,31 @@
+##👩‍💻 </ins>Sistema de gerenciamento de conferências científicas.</ins>
+
+
+Você está encarregado de desenvolver um **modelo conceitual** para um sistema que gerencia conferências científicas. 
+Este sistema deve ser capaz de gerenciar informações sobre conferências, os participantes, as sessões de apresentação, os artigos submetidos e os revisores.
+
+## ⬇️ Etapa 1: 
+## ↪️**Levantamento de Requisitos __Temos as seguintes informações:**
+
+Cada **conferência** tem um título único, data de realização, local e um tema central. As conferências podem ser compostas por várias sessões temáticas diferentes.
+
+Um **participante** pode ser um palestrante, ouvinte registrado e organizadores. Cada participante possui dados pessoais como nome, filiação institucional, contato e tipo de participação no evento.
+
+Cada **sessão dentro de uma conferência** aborda subtemas específicos do tema central. Uma sessão inclui data e hora da apresentação, múltiplas apresentações e é coordenada por um ou mais organizadores.
+
+Cada **apresentação** tem um título, um resumo, duração prevista e é atribuída a um palestrante específico. Apresentações podem incluir também materiais de suporte como slides ou vídeos.
+
+Artigos ou resumos são **submetidos** por **palestrantes** para avaliação antes de serem aceitos para apresentação.
+
+Cada **submissão** precisa ter informações dos artigos ou resumos, como título, resumo, data e o status, e cada uma das submissões é avaliada por **revisores** designados. São especialistas em tópicos específicos e responsáveis por avaliar as submissões. Eles fornecem feedback e uma decisão de aceitação ou rejeição.
+
+**Sequência de eventos:**
+Primeiramente, os participantes submetem seus artigos ou resumos para avaliação. 
+Após a submissão, os artigos são avaliados por revisores. Uma vez aceitos, os artigos são organizados em apresentações. 
+Finalmente, durante a conferência, os participantes apresentam seus trabalhos nas sessões designadas.
+
+## ⬇️ Etapa 2: 
+## ↪️**Definição dos Relacionamentos**
+Agora chegou a sua vez. 
+Primeiro, defina todas as entidades envolvidas neste sistema e depois, faça as relações lógicas entre elas, ou seja, se possui relacionamento um para um, um para muitos, dentre outros.
+
