@@ -1,0 +1,151 @@
+**Sistema de Gerenciamento de Conferências Científicas - Modelagem Conceitual**
+
+Entidades Identificadas
+
+Analisando os requisitos, podemos identificar as seguintes entidades principais:
+
+Conferência
+Participante
+Sessão 
+Apresentação
+Submissão (Artigo/Resumo)
+Revisor
+Material de Suporte
+
+Atributos das Entidades
+
+Conferência
+
+Título (chave primária)
+Data de início
+Data de término
+Local
+Tema central
+
+Participante
+
+ID (chave primária)
+Nome
+Filiação institucional
+E-mail (contato)
+Telefone (contato)
+Tipo de participação (palestrante, ouvinte, organizador)
+
+Sessão
+
+ID (chave primária)
+Subtema
+Data
+Hora de início
+Hora de término
+Local específico
+
+Apresentação
+
+ID (chave primária)
+Título
+Resumo
+Duração prevista
+
+Submissão
+
+ID (chave primária)
+Título
+Resumo
+Data de submissão
+Status (pendente, aceito, rejeitado)
+
+Revisor
+
+ID (chave primária)
+Nome
+Especialidade
+Filiação institucional
+Contato
+
+Material de Suporte
+
+ID (chave primária)
+Tipo (slides, vídeo, documento)
+Arquivo/link
+Descrição
+
+Relacionamentos entre as Entidades
+
+Conferência - Sessão: Uma conferência pode ter várias sessões (1:N)
+
+Uma conferência possui múltiplas sessões
+Cada sessão pertence a uma única conferência
+
+
+Participante - Conferência: Um participante pode participar de várias conferências e uma conferência pode ter vários participantes (N:M)
+
+Relação com atributo: tipo de participação (palestrante, ouvinte, organizador)
+
+
+Sessão - Participante (como organizador): Uma sessão pode ser coordenada por vários organizadores e um organizador pode coordenar várias sessões (N:M)
+
+Existe uma relação específica entre participantes do tipo "organizador" e sessões
+
+
+Sessão - Apresentação: Uma sessão contém várias apresentações (1:N)
+
+Uma sessão pode ter múltiplas apresentações
+Cada apresentação ocorre em uma única sessão
+
+
+Participante (como palestrante) - Apresentação: Um palestrante pode fazer várias apresentações, mas cada apresentação é atribuída a um único palestrante (1:N)
+
+Um participante do tipo "palestrante" pode ter várias apresentações
+Cada apresentação é realizada por um único palestrante
+
+
+Participante (como palestrante) - Submissão: Um palestrante pode submeter vários artigos/resumos (1:N)
+
+Um participante do tipo "palestrante" pode ter várias submissões
+Cada submissão está vinculada a um palestrante específico
+
+
+Submissão - Revisor: Uma submissão é avaliada por vários revisores e um revisor pode avaliar várias submissões (N:M)
+
+Relação com atributos: feedback, decisão (aceito/rejeitado), data da revisão
+
+
+Submissão - Apresentação: Uma submissão aceita resulta em uma apresentação (1:1)
+
+Apenas submissões com status "aceito" geram apresentações
+
+
+Apresentação - Material de Suporte: Uma apresentação pode ter vários materiais de suporte (1:N)
+
+Uma apresentação pode estar associada a múltiplos materiais
+Cada material de suporte pertence a uma única apresentação
+
+Diagrama ER (Conceitual)
+
+Para implementar este modelo no Visual Paradigm Online, você pode seguir esta estrutura de relacionamentos. O diagrama conceitual deve representar todas as entidades mencionadas acima e suas respectivas relações.
+
+Considere utilizar no Visual Paradigm:
+
+Retângulos para representar entidades
+Losangos para representar relacionamentos
+Linhas para conectar entidades e relacionamentos
+Cardinálidade nas linhas para indicar o tipo de relacionamento (1:1, 1:N, N:M)
+Elipses para atributos (se desejar exibi-los no modelo conceitual)
+
+Sequência Lógica do Sistema
+
+A sequência de eventos representada no modelo seria:
+
+Criação de uma conferência
+Cadastro de participantes (palestrantes, ouvintes, organizadores)
+Submissão de artigos/resumos por palestrantes
+Designação de revisores para avaliar as submissões
+Avaliação das submissões pelos revisores
+Aceitação ou rejeição das submissões
+Criação de sessões dentro da conferência
+Agendamento de apresentações para submissões aceitas
+Associação de materiais de suporte às apresentações
+Realização da conferência com suas respectivas sessões e apresentações
+
+Esta modelagem conceitual permite que você gerencie todo o ciclo de vida de uma conferência científica, desde a submissão de trabalhos até a realização do evento.
